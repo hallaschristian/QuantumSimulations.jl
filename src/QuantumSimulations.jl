@@ -1,4 +1,4 @@
-module OpticalBlochEquations
+module QuantumSimulations
 
 using StaticArrays
 import Parameters: @with_kw

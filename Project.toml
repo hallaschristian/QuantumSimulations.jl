@@ -1,7 +1,7 @@
-name = "OpticalBlochEquations"
+name = "QuantumSimulations"
 uuid = "691d0331-80d3-41b1-b293-7891a6f4a14f"
 version = "0.1.0"
-authors = ["christian-hh <christianhallas@g.harvard.edu> and contributors"]
+authors = ["christian-hh <hallaschristian@gmail.com> and contributors"]
 
 [deps]
 DifferentialEquations = "0c46a032-eb83-5123-abaf-570d42b7fbaa"
