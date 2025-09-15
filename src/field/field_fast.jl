@@ -142,20 +142,39 @@ function update_fields_fast!(p, r, t)
     update_ϕs!(p.ϕs, p.ωs, k, r, t)
     
     # update amplitudes
-    # update_as!(p.ϕs, p.as, p.rs)
     update_as!(p.ϕs, p.as, p.rs, p.sats)
     
     # update kEs
     update_E_kq!(p.kEs, p.as, p.ϵs)
 
     # update total E
-    update_E_total!(p.E_total, p.kEs)
+    update_E_total!(p.E, p.kEs)
     
     return nothing
 end
 export update_fields_fast!
 
 function update_fields_fast_multiple!(denom, rs, ϕs, ωs, as, sats, kEs, ϵs, E, k, r, t)
+    
+    # update saturation ratios
+    update_rs!(rs, r, denom)
+    
+    # update phases
+    update_ϕs!(ϕs, ωs, k, r, t)
+    
+    # update amplitudes
+    update_as!(ϕs, as, rs, sats)
+    
+    # update kEs
+    update_E_kq!(kEs, as, ϵs)
+
+    # # update total E
+    update_E_total!(E, kEs)
+    
+    return nothing
+end
+
+function update_fields!(denom, rs, ϕs, ωs, as, sats, kEs, ϵs, E, k, r, t)
     
     # update saturation ratios
     update_rs!(rs, r, denom)
